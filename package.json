@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": " npx parcel src/index.html ",
+    "building": " npx parcel build src/index.html --public-url /dsi-p4-pokedex-alu0100833010/ -d build ",
+    "githubpages": " npx gh-pages -d build "
   },
   "repository": {
     "type": "git",
