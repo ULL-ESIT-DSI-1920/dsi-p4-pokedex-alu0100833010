@@ -11,7 +11,7 @@ body {
 .banner {
     /*background: black;*/
     display: flex;
-    height: 350px;
+    height: 300px;
 }
 
 .body {
@@ -33,3 +33,42 @@ body {
     font-family: DejaVu Sans Mono, monospace;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+/* PokeDex */
+
+#pokedex {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px 10px;
+    /*background-color: green;*/
+    width: 100%;
+}
+
+.card {
+    font-family: DejaVu Sans Mono, monospace;
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 5px;
+    background-image: linear-gradient(rgb(88, 88, 88), rgb(255, 255, 255));
+    text-align: center;
+}
+
+.card:hover img {
+    display:none;
+}
+.card .front {
+    display:none;
+}
+.card:hover .front {
+    display: inline-block;
+    animation: resizePokemon 1s infinite;
+}
+
+@keyframes resizePokemon {
+    0% { transform: scale(1)}
+    100% { transform: scale(1.2)}
+}
+/*
+.type {
+    
+}
+*/
