@@ -34,18 +34,23 @@ const showPokedex = async () => {
     const pokedex = document.getElementById("pokedex");
     for(var i = 0; i < pokemons.length; i++) {
         var aux =  0;
+        while (aux != pokemons[i].pkm_type.length) {
+            if (aux == 0)
+                var tipo1 = pokemons[i].pkm_type[aux].type.name;                       
+            if (aux == 1)   
+                var tipo2 = pokemons[i].pkm_type[aux].type.name;
+            else 
+                tipo2 = "";          
+            aux++; 
+        }
         pokedex.innerHTML +=    `<div class="card">
                                     <img src="${pokemons[i].pkm_back}">
-                                    <img src="${pokemons[i].pkm_front}" class="front"><br>
+                                    <img class="front" src="${pokemons[i].pkm_front}"><br>
                                     ${pokemons[i].id}. ${pokemons[i].name}<br>
+                                    <div class="types">
+                                        ${tipo1} ${tipo2}
+                                    </div>
                                 </div>`
-        /*while (aux != pokemons[i].pkm_type.length){
-            pokedex.innerHTML +=    `<div class="type">
-                                        ${pokemons[i].pkm_type[aux].type.name}&nbsp                           
-                                    </div>`    
-            aux++;    
-        }*/
     }
-
 }
 
