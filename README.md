@@ -1,6 +1,6 @@
 # dsi-p4-pokedex-alu0100833010
 
-_Práctica 2.  PostCSS + PokeDex._
+_Práctica 4.  PostCSS + PokeDex._
 
 ## Descripción de la Práctica  dsi-p4-pokedex.
 
@@ -71,21 +71,62 @@ comenzamos creando la estructura del proyecto .
   
   Tras esto, la estructura final del proyecto quedaría:
   
-  ![Captura1](src/assets/captures/cap1.png)
+  ![Captura1](src/assets/captures/cap9.png)
   
 ### 2. Código _HTML_.
 
-Busca varias canciones en formato MP3 y guárdalas en la carpeta assets. Haz lo mismo con varias imágenes para las carátulas de los
-vinilos.
+La estrucutura de `index.html` es la siguiente:
 
- ![Captura2](src/assets/captures/cap2.png)
+ ![Captura2](src/assets/captures/cap1.png)
  
-Para añadir las imágenes se ha usado la propiedad `background-image` desde CSS:
+El código tiene un botón que será el encargado de, una vez se haga click sobre él, muestre los datos de nuestra PokeDex dentro del
+_div_ con `id="pokedex"`.
 
- ![Captura3](src/assets/captures/cap3.png)
- 
+### 3. Código _CSS_.
 
+ ![Captura3](src/assets/captures/cap5.png)
  
+Para mostrar los elementos de nuestra PokeDex, se ha utilizado la propiedad `display: grid` de CSS que nos permite dividir los elementos en secciones de filas y columnas.
+
+![Captura4](src/assets/captures/cap6.png)
+
+Por otro lado, para conseguir que los pokemons inicialmente se muestren de espaldas, y al pasar el cursor se muestren de frente y 
+a su vez aumenten de tamaño, lo hacemos con uso de código _CSS_. 
+
+La pseudo-clase `hover` nos permite realizar una determinada acción cuando el usuario pasa el cursor por encima del elemento al 
+que se le está aplicando. Como cada pokemon tiene dos imágenes que corresponden al frente y a la espalda, lo hacemos de la siguiente forma:
+
+La imagen de frente, inicialmente no se verá: 
+```
+.card .front {
+  display: none;
+}
+```
+Cuando el usuario pase el cursor por el elemento que contenga las imágenes del pokemon, hacemos que la imagen de espaldas no se muestre y que aparezca la frontal:
+
+```
+.card:hover img {
+  display: none
+}
+
+.card:hover .front {
+  display: inline-block;
+}
+```
+Por último, para que dicha imagen aumente, utilizamos la animación `resizePokemon` en la que indicamos el tamaño inicial y final
+y la añadimos en el código cuando se muestre la imagen frontal:
+```
+.card:hover .front {
+  display: inline-block;
+  animation: resizePokemon 1s infinite;
+}
+
+@keyframes resizePokemon {
+  0% { transform: scale(1)}
+  100% { transform: scale(1.2)}
+}
+```
+
 ### 5. Publicación en _gh-pages_.
  
 Para publicar nuestro proyecto en **gh-pages**, ejecutamos los siguientes comandos:
@@ -95,6 +136,6 @@ $ npx parcel build src/index.html --no-source-maps --detailed-report
 $ npx parcel build src/index.html --public-url /dsi-p2-jspotify-alu0100833010/ -d build
 $ npx gh-pages -d build
 ```
-![Captura9](src/assets/captures/cap9.png)
+![Captura9](src/assets/captures/cap11.png)
 
-Enlace:  https://ull-esit-dsi-1920.github.io/dsi-p2-jspotify-alu0100833010/
+Enlace:  https://ull-esit-dsi-1920.github.io/dsi-p4-pokedex-alu0100833010/
