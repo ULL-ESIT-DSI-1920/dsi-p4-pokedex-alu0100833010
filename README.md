@@ -194,3 +194,24 @@ Enlace:  https://ull-esit-dsi-1920.github.io/dsi-p4-pokedex-alu0100833010/
 Busca plugins de PostCSS que consideres interesantes y documentalos en el `README.md` con un enlace a su GitHub y una breve
 descripción de lo que hacen y para que podría serte útil.
 
+* **PreCSS**
+
+Al activar **PreCSS**, puedes obtener las características de un pre-procesador, de este modo puedes aprovechar de la sintaxis de
+Sass en tus hojas de estilo. Esto implica que puedes hacer uso de diversas funciones y características propias de esta sintaxis.
+
+Enlace Github: https://github.com/jonathantneal/precss
+
+* **Stylelint**
+
+**Stylelint** es un moderno corrector de código _CSS_ que revisará y validará tus archivos _CSS_. Ayuda a evitar errores comunes y
+mejorar tus hojas de estilo. También realiza una configuración personalizada al momento de realizar la validación del código.
+
+Enlace Github: https://github.com/stylelint/stylelint
+
+* **Lost Grid**
+
+**Lost Grid** es un plugin que permite trabajar con sistemas de grillas que son compatibles no sólo con _CSS_, sino también con la
+sintaxis de pre-procesadores populares como _Sass_ o _Less_. Puedes crear grillas sin invertir mucho tiempo por medio de la
+función calc().
+
+Enlace Github: https://github.com/peterramsing/lost
