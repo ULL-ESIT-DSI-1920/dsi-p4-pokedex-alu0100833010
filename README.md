@@ -12,7 +12,7 @@ código _CSS_ y lo convierte en un documento modificable con plugins en _Javascr
 Cada plugin **PostCSS** realiza una tarea en particular. 
 
 El objetivo de la práctica es crear una PokeDex para mostrar un listado de los 151 pokémon de primera generación. Para ello, 
-podemos utilizar la API gratuita PokeAPI. 
+podemos utilizar la API gratuita [PokeAPI](https://pokeapi.co/). 
 
 ## Comenzando
 
@@ -139,13 +139,40 @@ instalar los paquetes que deseemos mediante **npm** utilizando los siguientes co
 ```
 $ npm install -D autoprefixer postcss-clean postcss-font-magician postcss-mixins postcss-nesting
 ```
+![Captura5](src/assets/captures/cap8.png)
+
 Una vez instalados los paquetes, creamos un archivo de configuración `.postcssrc` con el siguiente contenido:
 
- ![Captura5](src/assets/captures/cap7.png)
+ ![Captura6](src/assets/captures/cap7.png)
 
 ### 4. Código _Javascript_.
 
+Utilizando _Javascript_, creamos la clase **Pokemon**:
 
+ ![Captura7](src/assets/captures/cap10.png)
+ 
+* `index.js`:
+
+ ![Captura8](src/assets/captures/cap3.png)
+ 
+En `index.js` creamos un array _pokemons_ que contendrá toda la información y características de los 151 pokemons. Estos datos los
+obtendremos de la API gratuita [PokeAPI](https://pokeapi.co/), por tanto, para ello realizaremos una petición desde nuestra 
+aplicación para conseguir la información necesaria haciendo uso de promesas. 
+
+Mediante `fetch` hacemos una llamada a la API y almacenamos la respuesta en un _json()_. Dicho _json_ lo almacenamos en una
+constante que posteriormente le pasaremos al objeto instanciado `pokemon` para obtener detalladamente la información requerida y 
+que almacenaremos en el array _pokemons_.
+
+ ![Captura9](src/assets/captures/cap4.png)
+ 
+Por último, creamos la función `showPokedex` que se encargará de mostrar los datos de los pokemons.
+
+* `Pokemon.js`:
+
+![Captura10](src/assets/captures/cap2.png)
+ 
+En `Pokemon.js` se analizan los datos que recibe el objeto `pokemon` de `index.js` y recogemos los que deseamos. Se ha añadido 
+el tipo de pokemon como extra.
 
 ### 5. Publicación en _gh-pages_.
  
@@ -153,9 +180,17 @@ Para publicar nuestro proyecto en **gh-pages**, ejecutamos los siguientes comand
 ```
 $ npx parcel build src/index.html --no-minify
 $ npx parcel build src/index.html --no-source-maps --detailed-report
-$ npx parcel build src/index.html --public-url /dsi-p2-jspotify-alu0100833010/ -d build
+$ npx parcel build src/index.html --public-url /dsi-p4-pokedex-alu0100833010/ -d build
 $ npx gh-pages -d build
 ```
-![Captura9](src/assets/captures/cap11.png)
+![Captura11](src/assets/captures/cap11.png)
 
 Enlace:  https://ull-esit-dsi-1920.github.io/dsi-p4-pokedex-alu0100833010/
+
+### 6. Retos.
+
+#### Reto 1.
+
+Busca plugins de PostCSS que consideres interesantes y documentalos en el `README.md` con un enlace a su GitHub y una breve
+descripción de lo que hacen y para que podría serte útil.
+
