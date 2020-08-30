@@ -84,9 +84,11 @@ _div_ con `id="pokedex"`.
 
 ### 3. Código _CSS_.
 
+* **PokeDex:**
+
  ![Captura3](src/assets/captures/cap5.png)
  
-Para mostrar los elementos de nuestra PokeDex, se ha utilizado la propiedad `display: grid` de CSS que nos permite dividir los elementos en secciones de filas y columnas.
+Para mostrar los elementos de nuestra **PokeDex**, se ha utilizado la propiedad `display: grid` de CSS que nos permite dividir los elementos en secciones de filas y columnas.
 
 ![Captura4](src/assets/captures/cap6.png)
 
@@ -126,6 +128,24 @@ y la añadimos en el código cuando se muestre la imagen frontal:
   100% { transform: scale(1.2)}
 }
 ```
+
+* **PostCSS:**
+
+Como hemos nombrado anteriormente, **PostCSS** son plugins de _Javascript_ que transforman el código _CSS_. 
+
+Para incorporarlo a nuestro proyecto, como hacemos uso de _Parcel_, el paquete de postcss ya está incorporado, sin embargo debemos
+instalar los paquetes que deseemos mediante **npm** utilizando los siguientes comandos:
+
+```
+$ npm install -D autoprefixer postcss-clean postcss-font-magician postcss-mixins postcss-nesting
+```
+Una vez instalados los paquetes, creamos un archivo de configuración `.postcssrc` con el siguiente contenido:
+
+ ![Captura5](src/assets/captures/cap7.png)
+
+### 4. Código _Javascript_.
+
+
 
 ### 5. Publicación en _gh-pages_.
  
